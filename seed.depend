@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1598386352 source:/home/acf/Bureau/seed/app.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	"app.h"
+
+1598386321 /home/acf/Bureau/seed/app.h
+	<iostream>
+	<vector>
+	<SDL2/SDL.h>
+
+1598386500 source:/home/acf/Bureau/seed/main.cpp
+	"app.h"
+	<SDL2/SDL2_gfxPrimitives.h>
+
