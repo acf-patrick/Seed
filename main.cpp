@@ -1,18 +1,33 @@
 #include "app.h"
-#include <SDL2/SDL2_gfxPrimitives.h>
+#include "object.h"
+#include "drawable.h"
+
+class Sprite : public Object, public Drawable
+{
+public:
+	Sprite() : Object()
+	{
+		m_texture = loadTexture("img.png");
+		SDL_QueryTexture(m_texture, NULL, NULL, &m_rect.w, &m_rect.h);
+	}
+	void draw(SDL_Renderer* renderer) const
+	{
+        SDL_RenderCopy(renderer, m_texture, NULL, &m_rect);
+	}
+};
 
 class Test : public App
 {
 public:
+	Sprite sprite;
+
 	Test() : App("test", 600, 600)
 	{}
 
-	void draw()
+	void render()
 	{
 		cleanTarget();
-		int w, h;
-		getWindowSize(&w, &h);
-		filledCircleColor(renderer, w/2, h/2, h/3, 0xffffffff);
+		draw(sprite);
 	}
 };
 

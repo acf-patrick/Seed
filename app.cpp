@@ -11,21 +11,21 @@ App::App(std::string app_title, int w, int h):
 
     if (SDL_Init(SDL_INIT_VIDEO))
     {
-        std::cerr << "Failed to load SDL library : " << SDL_GetError();
+        std::cerr << "Failed to load SDL library : " << SDL_GetError() << std::endl;
         exit(1);
     }
 
     m_window = SDL_CreateWindow(app_title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, w, h, SDL_WINDOW_SHOWN);
     if (!m_window)
     {
-        std::cerr << "Failed to open main m_window : " << SDL_GetError();
+        std::cerr << "Failed to open main m_window : " << SDL_GetError() << std::endl;
         exit(1);
     }
 
     m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
     if (!m_window)
     {
-        std::cerr << "Failed to create render context : " << SDL_GetError();
+        std::cerr << "Failed to create render context : " << SDL_GetError() << std::endl;
         exit(1);
     }
 }
@@ -43,10 +43,10 @@ void App::run()
     while (m_running)
     {
         while (SDL_PollEvent(&m_event))
-            manage_m_events();
+            manage_events();
         if (!m_paused)
             update();
-        draw();
+        render();
         SDL_RenderPresent(m_renderer);
     }
 }
@@ -56,12 +56,12 @@ void App::update()
     // overload
 }
 
-void App::draw()
+void App::render()
 {
     // overload
 }
 
-void App::manage_m_events()
+void App::manage_events()
 {
     if (m_event.type == SDL_QUIT)
         end();
@@ -75,7 +75,7 @@ void App::end()
 }
 
 void App::getWindowSize(int* w, int* h)
-{ SDL_GetWindowSize(m_window, w, h); }
+{ SDL_GetWindowSize(instance->m_window, w, h); }
 
 SDL_Window* App::getWindow()
 { return m_window; }
@@ -97,3 +97,6 @@ void App::cleanTarget()
     SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
     SDL_RenderClear(m_renderer);
 }
+
+void App::draw(const Drawable & drawable)
+{ drawable.draw(m_renderer); }

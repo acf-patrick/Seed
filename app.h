@@ -4,8 +4,9 @@
 #include <iostream>
 #include <vector>
 #include <SDL2/SDL.h>
+#include "drawable.h"
 
-/// Template
+/// template for the main class
 class App
 {
 public:
@@ -21,17 +22,19 @@ public:
 
     SDL_Window* getWindow();
     SDL_Renderer* getRenderer();
-    void getWindowSize(int*, int*);
+
+    void draw(const Drawable&);
 
     static bool keyPressed(SDL_Scancode);
     /* param : 1=left, 2=middle, 3=right */
     static bool buttonPressed(int);
     static void mousePosition(int*, int*);
+    static void getWindowSize(int*, int*);
 
 protected:
     virtual void manage_events();
     virtual void update();
-    virtual void draw();
+    virtual void render();
     void cleanTarget();
 
     // current app state

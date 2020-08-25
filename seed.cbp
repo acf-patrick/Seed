@@ -37,9 +37,12 @@
 		</Compiler>
 		<Linker>
 			<Add option="-lSDL2" />
+			<Add option="-lSDL2_image" />
 		</Linker>
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
+		<Unit filename="drawable.cpp" />
+		<Unit filename="drawable.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="object.h" />
 		<Extensions>

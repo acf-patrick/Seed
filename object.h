@@ -15,7 +15,9 @@ public:
 	void setPosition(int, int);
 	void getPosition(int&, int&);
 
-private:
+	void setBox(int, int, int, int);
+
+protected:
 	// positions
 	float m_x, m_y;
 	// bounding box
