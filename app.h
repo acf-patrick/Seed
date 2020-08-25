@@ -35,11 +35,11 @@ protected:
     void cleanTarget();
 
     // current app state
-    bool paused, running;
+    bool m_paused, m_running;
 
-    SDL_Window* window;
-    SDL_Renderer* renderer;
-    SDL_Event event;
+    SDL_Window* m_window;
+    SDL_Renderer* m_renderer;
+    SDL_Event m_event;
 
 };
 
