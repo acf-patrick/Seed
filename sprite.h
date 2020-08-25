@@ -13,7 +13,11 @@ public:
 
 	void defineSourceRect(int, int, int, int);
 	void defineSourceRect(const SDL_Rect&);
-    void draw(SDL_Renderer*);
+
+	void setFlip(SDL_RendererFlip);
+	void setTexture(SDL_Texture*);
+
+    virtual void draw(SDL_Renderer*);
 
 protected:
 	// tells which part of the texture will be drawn

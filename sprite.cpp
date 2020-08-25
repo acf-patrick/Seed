@@ -3,9 +3,7 @@
 Sprite::Sprite(int x, int y, const std::string& image_file) : m_flip(SDL_FLIP_NONE)
 {
     setPosition(x, y);
-    m_texture = loadTexture(image_file);
-    if (m_texture)
-		SDL_QueryTexture(m_texture, NULL, NULL, &m_rect.w, &m_rect.h);
+    setTexture(loadTexture(image_file));
 	defineSourceRect(0, 0, m_rect.w, m_rect.h);
 }
 
@@ -30,4 +28,16 @@ void Sprite::defineSourceRect(const SDL_Rect & rect)
     m_source_rect.y = rect.y;
     m_source_rect.w = rect.w;
     m_source_rect.h = rect.h;
+}
+
+void Sprite::setFlip(SDL_RendererFlip flip)
+{ m_flip = flip; }
+
+void Sprite::setTexture(SDL_Texture* texture)
+{
+    if (!texture)
+		return;
+	m_texture = texture;
+    if (m_texture)
+		SDL_QueryTexture(m_texture, NULL, NULL, &m_rect.w, &m_rect.h);
 }
