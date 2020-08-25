@@ -4,23 +4,16 @@
 
 Drawable::~Drawable()
 {
-    SDL_FreeSurface(m_surface);
     SDL_DestroyTexture(m_texture);
-    m_surface = NULL;
     m_texture = NULL;
 }
 
-void Drawable::draw(SDL_Renderer* renderer) const
+void Drawable::draw(SDL_Renderer* renderer)
 {
 	// overload
 }
 
-void Drawable::draw(SDL_Surface* target_surface) const
-{
-	// overload
-}
-
-SDL_Texture* loadTexture(const std::string& file_name)
+SDL_Texture* Drawable::loadTexture(const std::string& file_name)
 {
     SDL_Texture* ret = IMG_LoadTexture(App::instance->getRenderer(), file_name.c_str());
     if (!ret)

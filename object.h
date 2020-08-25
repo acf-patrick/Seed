@@ -13,9 +13,16 @@ public:
 	virtual void update();
 
 	void setPosition(int, int);
-	void getPosition(int&, int&);
+	SDL_Point getPosition();
+
+	void setCenter(int, int);
+	SDL_Point getCenter();
+
+	void setSize(int, int);
+	SDL_Point getSize();
 
 	void setBox(int, int, int, int);
+	SDL_Rect getBox();
 
 protected:
 	// positions

@@ -9,15 +9,13 @@ class Drawable
 {
 public:
 	virtual ~Drawable();
-	virtual void draw(SDL_Renderer*) const;
-	virtual void draw(SDL_Surface*) const;
+	virtual void draw(SDL_Renderer*);
+
+	static SDL_Texture* loadTexture(const std::string&);
 
 protected:
     SDL_Texture* m_texture;
-    SDL_Surface* m_surface;
 };
-
-SDL_Texture* loadTexture(const std::string&);
 
 #endif // DRAWABLE_H
 

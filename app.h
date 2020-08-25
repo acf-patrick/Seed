@@ -23,7 +23,7 @@ public:
     SDL_Window* getWindow();
     SDL_Renderer* getRenderer();
 
-    void draw(const Drawable&);
+    void draw(Drawable&);
 
     static bool keyPressed(SDL_Scancode);
     /* param : 1=left, 2=middle, 3=right */

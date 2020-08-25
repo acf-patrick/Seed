@@ -98,5 +98,5 @@ void App::cleanTarget()
     SDL_RenderClear(m_renderer);
 }
 
-void App::draw(const Drawable & drawable)
+void App::draw(Drawable & drawable)
 { drawable.draw(m_renderer); }

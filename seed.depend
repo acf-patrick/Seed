@@ -1,34 +1,40 @@
 # depslib dependency file v1.0
-1598366883 source:/home/acf/Bureau/seed/app.cpp
+1598371055 source:/home/acf/Bureau/seed/app.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"app.h"
 
-1598365002 /home/acf/Bureau/seed/app.h
+1598371050 /home/acf/Bureau/seed/app.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	"drawable.h"
 
-1598366949 source:/home/acf/Bureau/seed/main.cpp
+1598370842 source:/home/acf/Bureau/seed/main.cpp
 	"app.h"
-	"object.h"
-	"drawable.h"
-	<SDL2/SDL2_gfxPrimitives.h>
-	<SDL2/SDL_image.h>
+	"sprite.h"
 
-1598366914 /home/acf/Bureau/seed/object.h
+1598370345 /home/acf/Bureau/seed/object.h
 	<SDL2/SDL.h>
 
-1598368080 /home/acf/Bureau/seed/drawable.h
+1598370950 /home/acf/Bureau/seed/drawable.h
 	<SDL2/SDL.h>
 	<iostream>
 
-1598367721 source:/home/acf/Bureau/seed/drawable.cpp
+1598370959 source:/home/acf/Bureau/seed/drawable.cpp
 	"drawable.h"
 	"app.h"
 	<SDL2/SDL_image.h>
 
-1598367048 source:/home/acf/Bureau/seed/object.cpp
+1598370908 source:/home/acf/Bureau/seed/object.cpp
 	"object.h"
+
+1598371269 /home/acf/Bureau/seed/sprite.h
+	<iostream>
+	<SDL2/SDL.h>
+	"object.h"
+	"drawable.h"
+
+1598370939 source:/home/acf/Bureau/seed/sprite.cpp
+	"sprite.h"
 
