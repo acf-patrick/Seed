@@ -28,10 +28,13 @@ App::App(std::string app_title, int w, int h):
         std::cerr << "Failed to create render context : " << SDL_GetError() << std::endl;
         exit(1);
     }
+
+    signals = new SignalManager;
 }
 
 App::~App()
 {
+    delete signals;
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
     TTF_Quit();

@@ -5,6 +5,7 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include "drawable.h"
+#include "signal.h"
 
 /// template for the main class
 class App
@@ -44,6 +45,7 @@ protected:
     SDL_Renderer* m_renderer;
     SDL_Event m_event;
 
+    SignalManager* signals;
 };
 
 #endif

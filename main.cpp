@@ -1,14 +1,21 @@
 #include "app.h"
-#include "sprite.h"
+#include "drawable.h"
+#include "animatedSprite.h"
 
 class Test : public App
 {
 public:
-	Sprite sprite;
+	AnimatedSprite sprite;
 
-	Test() : App("test", 600, 600), sprite(0, 0, "img.png")
-	{ }
+	Test() : App("test", 600, 600), sprite(0, 0, 20)
+	{
+		sprite.setResources("img.png", 11);
+	}
 
+	void update()
+	{
+		sprite.update();
+	}
 	void render()
 	{
 		cleanTarget();

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include "timer.h"
 #include "sprite.h"
 #include "drawable.h"
 
@@ -61,12 +62,14 @@ private:
 
 protected:
     Sprite* m_component;
+    Chrono m_timer;
 
 public:
-	AnimatedSprite(int, int);
+	AnimatedSprite(int, int, int);
 	~AnimatedSprite();
 
-	void setResources(SDL_Texture*, std::vector<SDL_Rect>);
+	void setResources(const std::string&, std::vector<SDL_Rect>);
+	void setResources(const std::string&, int);
 	void setResources(std::vector<SDL_Texture*>);
 
 	void update();

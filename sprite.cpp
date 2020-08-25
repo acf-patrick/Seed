@@ -26,8 +26,8 @@ void Sprite::defineSourceRect(const SDL_Rect & rect)
 {
     m_source_rect.x = rect.x;
     m_source_rect.y = rect.y;
-    m_source_rect.w = rect.w;
-    m_source_rect.h = rect.h;
+    m_rect.w = m_source_rect.w = rect.w;
+    m_rect.h = m_source_rect.h = rect.h;
 }
 
 void Sprite::setFlip(SDL_RendererFlip flip)

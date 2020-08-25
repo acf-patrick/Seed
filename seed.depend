@@ -1,18 +1,20 @@
 # depslib dependency file v1.0
-1598371055 source:/home/acf/Bureau/seed/app.cpp
+1598384492 source:/home/acf/Bureau/seed/app.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"app.h"
 
-1598371050 /home/acf/Bureau/seed/app.h
+1598384453 /home/acf/Bureau/seed/app.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	"drawable.h"
+	"signal.h"
 
-1598370842 source:/home/acf/Bureau/seed/main.cpp
+1598388596 source:/home/acf/Bureau/seed/main.cpp
 	"app.h"
-	"sprite.h"
+	"drawable.h"
+	"animatedSprite.h"
 
 1598370345 /home/acf/Bureau/seed/object.h
 	<SDL2/SDL.h>
@@ -35,6 +37,30 @@
 	"object.h"
 	"drawable.h"
 
-1598370939 source:/home/acf/Bureau/seed/sprite.cpp
+1598381412 source:/home/acf/Bureau/seed/sprite.cpp
 	"sprite.h"
+
+1598388331 source:/home/acf/Bureau/seed/animatedSprite.cpp
+	"animatedSprite.h"
+
+1598388584 /home/acf/Bureau/seed/animatedSprite.h
+	<iostream>
+	<vector>
+	"timer.h"
+	"sprite.h"
+	"drawable.h"
+
+1598385222 /home/acf/Bureau/seed/signal.h
+	<map>
+	"object.h"
+
+1598385713 source:/home/acf/Bureau/seed/signal.cpp
+	"signal.h"
+	<vector>
+
+1598388506 source:/home/acf/Bureau/seed/timer.cpp
+	"timer.h"
+	<SDL2/SDL.h>
+
+1598386295 /home/acf/Bureau/seed/timer.h
 

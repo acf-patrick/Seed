@@ -39,12 +39,21 @@
 			<Add option="-lSDL2" />
 			<Add option="-lSDL2_image" />
 		</Linker>
+		<Unit filename="animatedSprite.cpp" />
+		<Unit filename="animatedSprite.h" />
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
 		<Unit filename="drawable.cpp" />
 		<Unit filename="drawable.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="object.cpp" />
 		<Unit filename="object.h" />
+		<Unit filename="signal.cpp" />
+		<Unit filename="signal.h" />
+		<Unit filename="sprite.cpp" />
+		<Unit filename="sprite.h" />
+		<Unit filename="timer.cpp" />
+		<Unit filename="timer.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
