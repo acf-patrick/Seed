@@ -5,6 +5,7 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include "drawable.h"
+#include "camera.h"
 #include "signal.h"
 
 /// template for the main class
@@ -24,7 +25,7 @@ public:
     SDL_Window* getWindow();
     SDL_Renderer* getRenderer();
 
-    void draw(Drawable&);
+    void draw(Drawable*);
 
     static bool keyPressed(SDL_Scancode);
     /* param : 1=left, 2=middle, 3=right */
@@ -44,6 +45,8 @@ protected:
     SDL_Window* m_window;
     SDL_Renderer* m_renderer;
     SDL_Event m_event;
+
+    Camera* m_camera;
 
     SignalManager* signals;
 };

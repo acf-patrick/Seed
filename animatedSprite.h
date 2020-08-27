@@ -7,7 +7,7 @@
 #include "sprite.h"
 #include "drawable.h"
 
-class AnimatedSprite : public Object, public Drawable
+class AnimatedSprite : public Sprite
 {
 private:
 	class UsingSpritesheet : public Sprite
@@ -35,7 +35,7 @@ private:
 	class SeparatedSprites : public Sprite
 	{
 	public:
-		SeparatedSprites(int x, int y) : Sprite(x, y, ""), m_frame_index(0)
+		SeparatedSprites(int x, int y) : Sprite(x, y), m_frame_index(0)
 		{}
 		~SeparatedSprites()
 		{
@@ -71,6 +71,9 @@ public:
 	void setResources(const std::string&, std::vector<SDL_Rect>);
 	void setResources(const std::string&, int);
 	void setResources(std::vector<SDL_Texture*>);
+
+	void flip(SDL_RendererFlip);
+	void setTexture(SDL_Texture*);
 
 	void update();
 	void draw(SDL_Renderer*);

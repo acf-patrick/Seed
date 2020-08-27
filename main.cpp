@@ -7,7 +7,7 @@ class Test : public App
 public:
 	AnimatedSprite sprite;
 
-	Test() : App("test", 600, 600), sprite(0, 0, 20)
+	Test() : App("test", 480, 360), sprite(0, 0, 20)
 	{
 		sprite.setResources("img.png", 11);
 	}
@@ -19,7 +19,7 @@ public:
 	void render()
 	{
 		cleanTarget();
-		draw(sprite);
+		draw(&sprite);
 	}
 };
 

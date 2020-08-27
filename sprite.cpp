@@ -1,9 +1,10 @@
 #include "sprite.h"
 
-Sprite::Sprite(int x, int y, const std::string& image_file) : m_flip(SDL_FLIP_NONE)
+Sprite::Sprite(int x, int y, std::string file_img) : m_flip(SDL_FLIP_NONE)
 {
     setPosition(x, y);
-    setTexture(loadTexture(image_file));
+    if (!file_img.empty())
+		setTexture(loadTexture(file_img));
 	defineSourceRect(0, 0, m_rect.w, m_rect.h);
 }
 
@@ -30,8 +31,8 @@ void Sprite::defineSourceRect(const SDL_Rect & rect)
     m_rect.h = m_source_rect.h = rect.h;
 }
 
-void Sprite::setFlip(SDL_RendererFlip flip)
-{ m_flip = flip; }
+void Sprite::flip(SDL_RendererFlip p_flip)
+{ m_flip = p_flip; }
 
 void Sprite::setTexture(SDL_Texture* texture)
 {

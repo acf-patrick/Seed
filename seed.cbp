@@ -43,9 +43,12 @@
 		<Unit filename="animatedSprite.h" />
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
+		<Unit filename="camera.cpp" />
+		<Unit filename="camera.h" />
 		<Unit filename="drawable.cpp" />
 		<Unit filename="drawable.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.h" />
 		<Unit filename="object.cpp" />
 		<Unit filename="object.h" />
 		<Unit filename="signal.cpp" />
