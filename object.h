@@ -9,7 +9,6 @@ public:
 	Object();
 	virtual ~Object();
 
-	// mettre à jour l'objet à chaque frame
 	virtual void update();
 
 	void setPosition(int, int);

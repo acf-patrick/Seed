@@ -1,22 +1,23 @@
 # depslib dependency file v1.0
-1598384492 source:/home/acf/Bureau/seed/app.cpp
+1598558767 source:/home/acf/Bureau/seed/app.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"app.h"
 
-1598384453 /home/acf/Bureau/seed/app.h
+1598556481 /home/acf/Bureau/seed/app.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
 	"drawable.h"
+	"camera.h"
 	"signal.h"
 
-1598388596 source:/home/acf/Bureau/seed/main.cpp
+1598427641 source:/home/acf/Bureau/seed/main.cpp
 	"app.h"
 	"drawable.h"
 	"animatedSprite.h"
 
-1598370345 /home/acf/Bureau/seed/object.h
+1598554968 /home/acf/Bureau/seed/object.h
 	<SDL2/SDL.h>
 
 1598370950 /home/acf/Bureau/seed/drawable.h
@@ -31,19 +32,19 @@
 1598370908 source:/home/acf/Bureau/seed/object.cpp
 	"object.h"
 
-1598381343 /home/acf/Bureau/seed/sprite.h
+1598556302 /home/acf/Bureau/seed/sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	"object.h"
 	"drawable.h"
 
-1598381412 source:/home/acf/Bureau/seed/sprite.cpp
+1598515892 source:/home/acf/Bureau/seed/sprite.cpp
 	"sprite.h"
 
-1598388331 source:/home/acf/Bureau/seed/animatedSprite.cpp
+1598543150 source:/home/acf/Bureau/seed/animatedSprite.cpp
 	"animatedSprite.h"
 
-1598388584 /home/acf/Bureau/seed/animatedSprite.h
+1598554673 /home/acf/Bureau/seed/animatedSprite.h
 	<iostream>
 	<vector>
 	"timer.h"
@@ -63,4 +64,13 @@
 	<SDL2/SDL.h>
 
 1598386295 /home/acf/Bureau/seed/timer.h
+
+1598558365 /home/acf/Bureau/seed/camera.h
+	<SDL2/SDL.h>
+	"object.h"
+	"sprite.h"
+
+1598558814 source:/home/acf/Bureau/seed/camera.cpp
+	"camera.h"
+	"app.h"
 

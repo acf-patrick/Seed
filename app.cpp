@@ -5,7 +5,8 @@
 App* App::instance(NULL);
 
 App::App(std::string app_title, int w, int h):
-    m_paused(false), m_running(true)
+    m_paused(false), m_running(true),
+    m_camera(nullptr)
 {
     instance = this;
 
@@ -56,7 +57,8 @@ void App::run()
 
 void App::update()
 {
-    // overload
+    if (m_camera)
+        m_camera->update();
 }
 
 void App::render()
@@ -101,5 +103,10 @@ void App::cleanTarget()
     SDL_RenderClear(m_renderer);
 }
 
-void App::draw(Drawable & drawable)
-{ drawable.draw(m_renderer); }
+void App::draw(Drawable * drawable)
+{
+    if (m_camera)
+        m_camera->draw(dynamic_cast<Sprite*> (drawable));
+    else
+        drawable->draw(m_renderer);
+}

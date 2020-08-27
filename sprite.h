@@ -9,15 +9,17 @@
 class Sprite : public Object, public Drawable
 {
 public:
-	Sprite(int, int, const std::string&);
+	Sprite(int, int, std::string file_img = "");
 
+	/* which part of the texture will be shown */
 	void defineSourceRect(int, int, int, int);
 	void defineSourceRect(const SDL_Rect&);
 
-	void setFlip(SDL_RendererFlip);
-	void setTexture(SDL_Texture*);
+	virtual void flip(SDL_RendererFlip);
 
-    virtual void draw(SDL_Renderer*);
+	virtual void setTexture(SDL_Texture*);
+
+    void draw(SDL_Renderer*);
 
 protected:
 	// tells which part of the texture will be drawn
