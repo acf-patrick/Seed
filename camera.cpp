@@ -78,3 +78,6 @@ void Camera::draw(Sprite* sprite)
     sprite->draw(App::instance->getRenderer());
     sprite->setPosition(prev.x, prev.y);
 }
+
+void Camera::setMode(Mode mode)
+{ m_mode = mode; }

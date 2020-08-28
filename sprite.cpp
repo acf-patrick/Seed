@@ -36,9 +36,18 @@ void Sprite::flip(SDL_RendererFlip p_flip)
 
 void Sprite::setTexture(SDL_Texture* texture)
 {
-    if (!texture)
-		return;
 	m_texture = texture;
-    if (m_texture)
+	updateSize();
+}
+
+void Sprite::setTexture(const std::string & file_name)
+{
+    m_texture = Drawable::loadTexture(file_name);
+    updateSize();
+}
+
+void Sprite::updateSize()
+{
+	if (m_texture)
 		SDL_QueryTexture(m_texture, NULL, NULL, &m_rect.w, &m_rect.h);
 }

@@ -2,20 +2,22 @@
 #include "drawable.h"
 #include "animatedSprite.h"
 
+const int w(480), h(360);
+
 class Test : public App
 {
 public:
 	AnimatedSprite sprite;
 
-	Test() : App("test", 480, 360), sprite(0, 0, 20)
+	Test() : App("test", w, h), sprite(0, 0, 20, AnimatedSprite::using_spritesheet)
 	{
 		sprite.setResources("img.png", 11);
+		m_camera = new Camera(Camera::center_following);
+		m_camera->setBox(0, 0, w, h);
 	}
 
 	void update()
-	{
-		sprite.update();
-	}
+	{ sprite.update(); }
 	void render()
 	{
 		cleanTarget();

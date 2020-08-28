@@ -18,6 +18,7 @@ public:
 	virtual void flip(SDL_RendererFlip);
 
 	virtual void setTexture(SDL_Texture*);
+	virtual void setTexture(const std::string&);
 
     void draw(SDL_Renderer*);
 
@@ -25,6 +26,9 @@ protected:
 	// tells which part of the texture will be drawn
     SDL_Rect m_source_rect;
     SDL_RendererFlip m_flip;
+
+private:
+    void updateSize();
 };
 
 #endif // SPRITE_H

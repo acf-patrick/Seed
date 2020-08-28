@@ -14,6 +14,7 @@ public:
 
 	void setContainer(int, int, int, int);
 	void setLimit(int, int, int, int);
+	void setMode(Mode);
 
 	void update();
 	void draw(Sprite*);

@@ -55,6 +55,8 @@
 		<Unit filename="signal.h" />
 		<Unit filename="sprite.cpp" />
 		<Unit filename="sprite.h" />
+		<Unit filename="texture.cpp" />
+		<Unit filename="texture.h" />
 		<Unit filename="timer.cpp" />
 		<Unit filename="timer.h" />
 		<Extensions>

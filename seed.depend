@@ -12,7 +12,7 @@
 	"camera.h"
 	"signal.h"
 
-1598427641 source:/home/acf/Bureau/seed/main.cpp
+1598603604 source:/home/acf/Bureau/seed/main.cpp
 	"app.h"
 	"drawable.h"
 	"animatedSprite.h"
@@ -29,22 +29,22 @@
 	"app.h"
 	<SDL2/SDL_image.h>
 
-1598370908 source:/home/acf/Bureau/seed/object.cpp
+1598602809 source:/home/acf/Bureau/seed/object.cpp
 	"object.h"
 
-1598556302 /home/acf/Bureau/seed/sprite.h
+1598604671 /home/acf/Bureau/seed/sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	"object.h"
 	"drawable.h"
 
-1598515892 source:/home/acf/Bureau/seed/sprite.cpp
+1598604761 source:/home/acf/Bureau/seed/sprite.cpp
 	"sprite.h"
 
-1598543150 source:/home/acf/Bureau/seed/animatedSprite.cpp
+1598606121 source:/home/acf/Bureau/seed/animatedSprite.cpp
 	"animatedSprite.h"
 
-1598554673 /home/acf/Bureau/seed/animatedSprite.h
+1598606091 /home/acf/Bureau/seed/animatedSprite.h
 	<iostream>
 	<vector>
 	"timer.h"
@@ -65,12 +65,12 @@
 
 1598386295 /home/acf/Bureau/seed/timer.h
 
-1598558365 /home/acf/Bureau/seed/camera.h
+1598603643 /home/acf/Bureau/seed/camera.h
 	<SDL2/SDL.h>
 	"object.h"
 	"sprite.h"
 
-1598558814 source:/home/acf/Bureau/seed/camera.cpp
+1598603674 source:/home/acf/Bureau/seed/camera.cpp
 	"camera.h"
 	"app.h"
 
