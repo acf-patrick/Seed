@@ -11,6 +11,7 @@ public:
 
 	Test() : App("test", w, h), sprite(0, 0, 20, AnimatedSprite::using_spritesheet)
 	{
+		sprite.setSize(32, 32);
 		sprite.setResources("img.png", 11);
 		m_camera = new Camera(Camera::center_following);
 		m_camera->setBox(0, 0, w, h);

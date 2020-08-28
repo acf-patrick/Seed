@@ -5,6 +5,7 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include "drawable.h"
+#include "texture.h"
 #include "camera.h"
 #include "signal.h"
 
@@ -47,8 +48,8 @@ protected:
     SDL_Event m_event;
 
     Camera* m_camera;
-
-    SignalManager* signals;
+    SignalManager* m_signals;
+    TextureManager* m_texture_manager;
 };
 
 #endif

@@ -30,12 +30,14 @@ App::App(std::string app_title, int w, int h):
         exit(1);
     }
 
-    signals = new SignalManager;
+    m_signals = new SignalManager;
+    m_texture_manager = new TextureManager;
 }
 
 App::~App()
 {
-    delete signals;
+    delete m_signals;
+    delete m_texture_manager;
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
     TTF_Quit();

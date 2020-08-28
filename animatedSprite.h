@@ -24,6 +24,8 @@ public:
 
 	void update();
 
+	void draw(SDL_Renderer*);
+
 protected:
     Chrono m_timer;
 
@@ -34,9 +36,7 @@ protected:
 	std::vector<SDL_Texture*> m_image_textures;
 
 private:
-	void defineSrcRects(std::vector<SDL_Rect> rects)
-	{ m_srcrects = rects; }
-	void setTextures(std::vector<SDL_Texture*> textures)
-	{ m_image_textures = textures; }
+	void defineSrcRects(std::vector<SDL_Rect>);
+	void setTextures(std::vector<SDL_Texture*>);
 };
 #endif // ANIMATED_SPRITE_H

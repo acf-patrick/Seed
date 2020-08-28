@@ -11,8 +11,6 @@ public:
 	virtual ~Drawable();
 	virtual void draw(SDL_Renderer*);
 
-	static SDL_Texture* loadTexture(const std::string&);
-
 protected:
     SDL_Texture* m_texture;
 };

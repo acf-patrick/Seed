@@ -11,6 +11,8 @@ public:
 
 	virtual void update();
 
+	void move(int, int);
+
 	void setPosition(int, int);
 	SDL_Point getPosition();
 
@@ -26,6 +28,8 @@ public:
 protected:
 	// positions
 	float m_x, m_y;
+	// real size
+	int m_w, m_h;
 	// bounding box
 	SDL_Rect m_rect;
 	// in degrees

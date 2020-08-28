@@ -6,6 +6,8 @@
 #include "object.h"
 #include "drawable.h"
 
+/* note : m_rect contains the texture's size not object's size */
+
 class Sprite : public Object, public Drawable
 {
 public:
@@ -25,10 +27,12 @@ public:
 protected:
 	// tells which part of the texture will be drawn
     SDL_Rect m_source_rect;
+
     SDL_RendererFlip m_flip;
 
 private:
     void updateSize();
+
 };
 
 #endif // SPRITE_H

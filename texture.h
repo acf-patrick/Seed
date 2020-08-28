@@ -7,24 +7,15 @@
 class TextureManager
 {
 public:
-	TextureManager() {}
-    ~TextureManager()
-    {
-        for (auto pair : m_textures)
-		{
-            SDL_DestroyTexture(pair.second);
-            m_textures[pair.first] = nullptr;
-		}
-    }
-    static SDL_Texture* loadTexture(const std::string & file_name)
-    {
-
-    }
+	TextureManager();
+    ~TextureManager();
+    static SDL_Texture* loadTexture(const std::string &, std::string ID = "");
+    static SDL_Texture* getTexture(const std::string &);
 
 private:
 	std::map<std::string, SDL_Texture*> m_textures;
 
-	TextureManager* instance;
+	static TextureManager* instance;
 };
-#endif // TEXTURE_H
 
+#endif // TEXTURE_H
