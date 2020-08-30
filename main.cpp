@@ -5,7 +5,7 @@
 #include <vector>
 #include <SDL2/SDL2_gfxPrimitives.h>
 
-const int w(480), h(360);
+const int w(800), h(600);
 const float scale(30);
 
 b2World *world;
@@ -17,7 +17,7 @@ class Ground : public Sprite
 public:
     Ground() : Sprite(40, h-70)
     {
-    	setSize(400, 5);
+    	setSize(w-80, 5);
         b2BodyDef body_def;
         SDL_Point center(getCenter());
         body_def.position.Set(center.x/scale, center.y/scale);
@@ -29,7 +29,7 @@ public:
     void draw(SDL_Renderer* renderer)
     {
     	SDL_SetRenderDrawColor(renderer, 150, 241, 60, 255);
-    	SDL_Rect r = { m_x, m_y, m_w, m_h };
+    	SDL_Rect && r = getBox();
     	SDL_RenderDrawRect(renderer, &r);
 	}
 };
@@ -43,6 +43,7 @@ public:
 	{
 		setResources("img.png", 11);
 		setSize(32, 32);
+		zoom(2, 1);
 		b2BodyDef body_def;
 		body_def.type = b2_dynamicBody;
         SDL_Point center(getCenter());
@@ -54,8 +55,11 @@ public:
         body_fix_def.shape = &body_s;
         body_fix_def.density =  0.5;
         body_fix_def.friction = 0.3;
+        body_fix_def.restitution = 0.5;
         body->CreateFixture(&body_fix_def);
 	}
+	~Box()
+	{ world->DestroyBody(body); }
 	void update()
 	{
 		AnimatedSprite::update();
@@ -95,9 +99,20 @@ public:
 	}
 	void update()
 	{
-		world->Step(1/60.f, 6, 2);
-		for (auto sprite : sprites)
-			sprite->update();
+		world->Step(1/120.f, 3, 2);
+		std::vector<Sprite*> lSprite(sprites);
+		for (int i=0; i<(int)lSprite.size(); ++i)
+		{
+			Sprite* sprite(lSprite[i]);
+            SDL_Rect box(sprite->getBox()), win = { 0, 0, w, h };
+			if (SDL_HasIntersection(&box, &win))
+				sprite->update();
+			else
+			{
+				delete sprite;
+				sprites.erase(sprites.begin()+i);
+			}
+		}
 	}
 	void render()
 	{

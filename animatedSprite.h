@@ -15,9 +15,12 @@ public:
 	AnimatedSprite(int, int, int, Mode);
 	~AnimatedSprite();
 
-	void setResources(const std::string&, std::vector<SDL_Rect>);
+	void setResources(const std::string&, const std::vector<SDL_Rect>&);
+	void setResources(SDL_Texture*, const std::vector<SDL_Rect>&);
 	void setResources(const std::string&, int);
+	void setResources(SDL_Texture*, int);
 	void setResources(const std::vector<std::string>&);
+	void setResources(const std::vector<SDL_Texture*>&);
 
 	void setTexture(SDL_Texture*);
 	void setTexture(const std::string&);
@@ -34,5 +37,6 @@ protected:
 
 	std::vector<SDL_Rect> m_srcrects;
 	std::vector<SDL_Texture*> m_image_textures;
+
 };
 #endif // ANIMATED_SPRITE_H

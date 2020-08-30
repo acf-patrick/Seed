@@ -17,7 +17,7 @@ public:
 	void defineSourceRect(int, int, int, int);
 	void defineSourceRect(const SDL_Rect&);
 
-	virtual void flip(SDL_RendererFlip);
+	void flip(SDL_RendererFlip);
 
 	virtual void setTexture(SDL_Texture*);
 	virtual void setTexture(const std::string&);
@@ -26,12 +26,18 @@ public:
 
     SDL_Point getTextureSize();
 
+    void zoom(float, float);
+    void setScaleX(float);
+    void setScaleY(float);
+
 protected:
 	// tells which part of the texture will be drawn
 	// set to texture's size by default
     SDL_Rect m_source_rect;
 
     SDL_RendererFlip m_flip;
+
+    float m_scaleX, m_scaleY;
 
 };
 

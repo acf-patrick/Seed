@@ -1,7 +1,9 @@
 #include "sprite.h"
 #include "texture.h"
 
-Sprite::Sprite(int x, int y, std::string file_img) : m_flip(SDL_FLIP_NONE)
+Sprite::Sprite(int x, int y, std::string file_img) :
+	m_flip(SDL_FLIP_NONE), m_scaleX(1),
+	m_scaleY(1)
 {
     setPosition(x, y);
     if (!file_img.empty())
@@ -17,7 +19,6 @@ void Sprite::defineSourceRect(int x, int y, int w, int h)
     m_source_rect.h = (Uint16)h;
 }
 
-
 void Sprite::defineSourceRect(const SDL_Rect & rect)
 {
     m_source_rect.x = rect.x;
@@ -31,8 +32,8 @@ void Sprite::draw(SDL_Renderer* renderer)
 	SDL_Rect source(m_source_rect), dest;
 	dest.x = (Sint16)m_x;
 	dest.y = (Sint16)m_y;
-	dest.w = m_source_rect.w;
-	dest.h = m_source_rect.h;
+	dest.w = m_w;
+	dest.h = m_h;
 	SDL_RenderCopyEx(renderer, m_texture, &source, &dest, m_angle, NULL, m_flip);
 }
 
@@ -50,4 +51,22 @@ SDL_Point Sprite::getTextureSize()
 	SDL_Point ret;
 	SDL_QueryTexture(m_texture, NULL, NULL, &ret.x, &ret.y);
 	return ret;
+}
+
+void Sprite::zoom(float scale_x, float scale_y)
+{
+	setScaleX(scale_x);
+	setScaleY(scale_y);
+}
+
+void Sprite::setScaleX(float scale_x)
+{
+	m_scaleX = scale_x;
+	m_w *= scale_x;
+}
+
+void Sprite::setScaleY(float scale_y)
+{
+	m_scaleY = scale_y;
+	m_h *= scale_y;
 }

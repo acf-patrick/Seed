@@ -1,4 +1,4 @@
-./bin/
-./obj/
-./main.cpp
-./seed.*
+bin/
+obj/
+main.cpp
+seed*

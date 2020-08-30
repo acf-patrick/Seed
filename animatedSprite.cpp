@@ -9,7 +9,7 @@ AnimatedSprite::AnimatedSprite(int x, int y, int frames_per_second, Mode mode) :
 AnimatedSprite::~AnimatedSprite()
 { m_image_textures.clear(); }
 
-void AnimatedSprite::setResources(const std::string& img_name, std::vector<SDL_Rect> rects)
+void AnimatedSprite::setResources(const std::string& img_name, const std::vector<SDL_Rect> & rects)
 {
 	setTexture(img_name);
 	m_srcrects = rects;
@@ -45,14 +45,7 @@ void AnimatedSprite::update()
 void AnimatedSprite::setResources(const std::string& img_name, int frames_count)
 {
 	setTexture(img_name);
-	SDL_Point size(getTextureSize());
-	int w(size.x), h(size.y);
-	w /= frames_count;
-	for (int i=0; i < frames_count; ++i)
-	{
-        SDL_Rect r = { Sint16(i*w), 0, Uint16(w), Uint16(h) };
-        m_srcrects.push_back(r);
-	}
+	this->setResources(m_texture, frames_count);
 }
 
 void AnimatedSprite::setTexture(SDL_Texture* texture)
@@ -86,3 +79,24 @@ void AnimatedSprite::draw(SDL_Renderer* renderer)
     move (-centered.x, -centered.y);
 }
 
+void AnimatedSprite::setResources(SDL_Texture* texture, int frame_count)
+{
+	setTexture(texture);
+	SDL_Point size(getTextureSize());
+	int w(size.x), h(size.y);
+	w /= frame_count;
+	for (int i=0; i < frame_count; ++i)
+	{
+        SDL_Rect r = { Sint16(i*w), 0, Uint16(w), Uint16(h) };
+        m_srcrects.push_back(r);
+	}
+}
+
+void AnimatedSprite::setResources(const std::vector<SDL_Texture*>& textures)
+{ m_image_textures = textures; }
+
+void AnimatedSprite::setResources(SDL_Texture* texture, const std::vector<SDL_Rect>& rects)
+{
+    setTexture(texture);
+    m_srcrects = rects;
+}
