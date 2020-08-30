@@ -5,6 +5,8 @@
 #include "object.h"
 #include "sprite.h"
 
+class Sprite;
+
 class Camera : public Object
 {
 public:
@@ -21,10 +23,11 @@ public:
 
 	static Camera* instance;
 
-protected:
+private:
 	Object* m_focus;
 	SDL_Rect *m_container, *m_limit;
 	Mode m_mode;
+	SDL_Rect m_rect;
 };
 
 #endif // CAMERA_H

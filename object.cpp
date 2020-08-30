@@ -3,7 +3,6 @@
 Object::Object()
 {
 	setBox(0, 0, 0, 0);
-    m_rect.w = m_rect.h = 0;
     m_angle = 0;
 }
 
@@ -13,9 +12,7 @@ Object::~Object()
 void Object::setPosition(int x, int y)
 {
     m_x = (float)x;
-    m_rect.x = (Sint16)x;
     m_y = (float)y;
-    m_rect.y = (Sint16)y;
 }
 
 SDL_Point Object::getPosition()
@@ -63,8 +60,14 @@ SDL_Rect Object::getBox()
 	ret.y = (Sint16)m_y;
 	ret.w = (Uint16)m_w;
 	ret.h = (Uint16)m_h;
-	return m_rect;
+	return ret;
 }
 
 void Object::move(int x_offset, int y_offset)
 { setPosition(m_x + x_offset, m_y + y_offset); }
+
+float Object::getAngle()
+{ return m_angle; }
+
+void Object::setAngle(float angle)
+{ m_angle = angle; }

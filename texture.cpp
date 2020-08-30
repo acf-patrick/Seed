@@ -17,7 +17,7 @@ TextureManager::~TextureManager()
 	}
 }
 
-SDL_Texture* TextureManager::loadTexture(const std::string & file_name, std::string ID)
+SDL_Texture* TextureManager::load(const std::string & file_name, std::string ID)
 {
 	if (ID.empty())
 	{
@@ -33,5 +33,5 @@ SDL_Texture* TextureManager::loadTexture(const std::string & file_name, std::str
 	return texture;
 }
 
-SDL_Texture* TextureManager::getTexture(const std::string & ID)
+SDL_Texture* TextureManager::get(const std::string & ID)
 { return instance->m_textures[ID]; }

@@ -11,7 +11,7 @@
 class Sprite : public Object, public Drawable
 {
 public:
-	Sprite(int, int, std::string file_img = "");
+	Sprite(int x = 0, int y = 0, std::string file_img = "");
 
 	/* which part of the texture will be shown */
 	void defineSourceRect(int, int, int, int);
@@ -24,14 +24,14 @@ public:
 
     void draw(SDL_Renderer*);
 
+    SDL_Point getTextureSize();
+
 protected:
 	// tells which part of the texture will be drawn
+	// set to texture's size by default
     SDL_Rect m_source_rect;
 
     SDL_RendererFlip m_flip;
-
-private:
-    void updateSize();
 
 };
 

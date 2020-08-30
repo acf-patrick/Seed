@@ -9,8 +9,8 @@ class TextureManager
 public:
 	TextureManager();
     ~TextureManager();
-    static SDL_Texture* loadTexture(const std::string &, std::string ID = "");
-    static SDL_Texture* getTexture(const std::string &);
+    static SDL_Texture* load(const std::string &, std::string ID = "");
+    static SDL_Texture* get(const std::string &);
 
 private:
 	std::map<std::string, SDL_Texture*> m_textures;

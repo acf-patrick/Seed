@@ -38,6 +38,7 @@
 		<Linker>
 			<Add option="-lSDL2" />
 			<Add option="-lSDL2_image" />
+			<Add option="-lBox2D" />
 		</Linker>
 		<Unit filename="animatedSprite.cpp" />
 		<Unit filename="animatedSprite.h" />

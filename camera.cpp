@@ -6,7 +6,11 @@ Camera* Camera::instance(nullptr);
 Camera::Camera(Mode mode, Object* focus) :
 	m_focus(focus), m_container(nullptr),
 	m_limit(nullptr), m_mode(mode)
-{ instance = this; }
+{
+	instance = this;
+	m_rect.x = m_rect.y = 0;
+	m_rect.w = m_rect.h = 0;
+}
 
 Camera::~Camera()
 {

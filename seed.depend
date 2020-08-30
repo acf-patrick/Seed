@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1598614373 source:/home/acf/Bureau/seed/app.cpp
+1598640599 source:/home/acf/Bureau/seed/app.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_ttf.h>
 	"app.h"
 
-1598614100 /home/acf/Bureau/seed/app.h
+1598727480 /home/acf/Bureau/seed/app.h
 	<iostream>
 	<vector>
 	<SDL2/SDL.h>
@@ -13,15 +13,18 @@
 	"camera.h"
 	"signal.h"
 
-1598632422 source:/home/acf/Bureau/seed/main.cpp
+1598791926 source:/home/acf/Bureau/seed/main.cpp
 	"app.h"
 	"drawable.h"
 	"animatedSprite.h"
+	<Box2D/Box2D.h>
+	<vector>
+	<SDL2/SDL2_gfxPrimitives.h>
 
-1598631290 /home/acf/Bureau/seed/object.h
+1598789418 /home/acf/Bureau/seed/object.h
 	<SDL2/SDL.h>
 
-1598614308 /home/acf/Bureau/seed/drawable.h
+1598727477 /home/acf/Bureau/seed/drawable.h
 	<SDL2/SDL.h>
 	<iostream>
 
@@ -30,23 +33,24 @@
 	"app.h"
 	<SDL2/SDL_image.h>
 
-1598631825 source:/home/acf/Bureau/seed/object.cpp
+1598789431 source:/home/acf/Bureau/seed/object.cpp
 	"object.h"
 
-1598631900 /home/acf/Bureau/seed/sprite.h
+1598789770 /home/acf/Bureau/seed/sprite.h
 	<iostream>
 	<SDL2/SDL.h>
 	"object.h"
 	"drawable.h"
 
-1598632710 source:/home/acf/Bureau/seed/sprite.cpp
+1598791481 source:/home/acf/Bureau/seed/sprite.cpp
 	"sprite.h"
 	"texture.h"
 
-1598632532 source:/home/acf/Bureau/seed/animatedSprite.cpp
+1598791983 source:/home/acf/Bureau/seed/animatedSprite.cpp
 	"animatedSprite.h"
+	"texture.h"
 
-1598632419 /home/acf/Bureau/seed/animatedSprite.h
+1598639275 /home/acf/Bureau/seed/animatedSprite.h
 	<iostream>
 	<vector>
 	"timer.h"
@@ -67,20 +71,20 @@
 
 1598386295 /home/acf/Bureau/seed/timer.h
 
-1598603643 /home/acf/Bureau/seed/camera.h
+1598790124 /home/acf/Bureau/seed/camera.h
 	<SDL2/SDL.h>
 	"object.h"
 	"sprite.h"
 
-1598603674 source:/home/acf/Bureau/seed/camera.cpp
+1598790144 source:/home/acf/Bureau/seed/camera.cpp
 	"camera.h"
 	"app.h"
 
-1598611824 /home/acf/Bureau/seed/texture.h
+1598639304 /home/acf/Bureau/seed/texture.h
 	<SDL2/SDL.h>
 	<map>
 
-1598614595 source:/home/acf/Bureau/seed/texture.cpp
+1598639312 source:/home/acf/Bureau/seed/texture.cpp
 	"texture.h"
 	"app.h"
 	<sstream>
