@@ -39,6 +39,8 @@ void Camera::setLimit(int x, int y, int w, int h)
 
 void Camera::update()
 {
+	m_rect.x = (Sint16)m_x;
+	m_rect.y = (Sint16)m_y;
 	if (!m_focus)
 		return;
 	SDL_Point object_center(m_focus->getCenter());

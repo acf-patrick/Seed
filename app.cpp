@@ -114,7 +114,17 @@ bool App::getButtonPressed(int index)
 { return SDL_GetMouseState(0, 0) & SDL_BUTTON(index); }
 
 void App::getMousePosition(int* x, int* y)
-{ SDL_GetMouseState(x, y); }
+{
+    App & self = *instance;
+    SDL_GetMouseState(x, y);
+    // camera offset
+    if (self.m_camera)
+    {
+        SDL_Point camera(self.m_camera->getPosition());
+        *x += camera.x;
+        *y += camera.y;
+    }
+}
 
 void App::cleanTarget()
 {
