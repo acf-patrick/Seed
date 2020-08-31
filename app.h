@@ -28,14 +28,18 @@ public:
 
     void draw(Drawable*);
 
-    static bool keyPressed(SDL_Scancode);
+    static bool getKeyPressed(SDL_Scancode);
     /* param : 1=left, 2=middle, 3=right */
-    static bool buttonPressed(int);
-    static void mousePosition(int*, int*);
+    static bool getButtonPressed(int);
+    static void getMousePosition(int*, int*);
     static void getWindowSize(int*, int*);
 
 protected:
     virtual void manage_events();
+    virtual void keyPressed(SDL_Scancode);
+    virtual void keyReleased(SDL_Scancode);
+    virtual void buttonPressed(Uint8);
+    virtual void buttonReleased(Uint8);
     virtual void update();
     virtual void render();
     void cleanTarget();

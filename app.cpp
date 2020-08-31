@@ -70,8 +70,25 @@ void App::render()
 
 void App::manage_events()
 {
-    if (m_event.type == SDL_QUIT)
+    switch (m_event.type)
+    {
+    case SDL_QUIT:
         end();
+        break;
+    case SDL_KEYDOWN:
+        keyPressed(m_event.key.keysym.scancode);
+        break;
+    case SDL_KEYUP:
+        keyReleased(m_event.key.keysym.scancode);
+        break;
+    case SDL_MOUSEBUTTONDOWN:
+        buttonPressed(m_event.button.button);
+        break;
+    case SDL_MOUSEBUTTONUP:
+        buttonReleased(m_event.button.button);
+        break;
+    default: ;
+    }
 }
 
 void App::pause() { m_paused = !m_paused; }
@@ -90,13 +107,13 @@ SDL_Window* App::getWindow()
 SDL_Renderer* App::getRenderer()
 { return m_renderer; }
 
-bool App::keyPressed(SDL_Scancode key)
+bool App::getKeyPressed(SDL_Scancode key)
 { return SDL_GetKeyboardState(NULL)[key]; }
 
-bool App::buttonPressed(int index)
+bool App::getButtonPressed(int index)
 { return SDL_GetMouseState(0, 0) & SDL_BUTTON(index); }
 
-void App::mousePosition(int* x, int* y)
+void App::getMousePosition(int* x, int* y)
 { SDL_GetMouseState(x, y); }
 
 void App::cleanTarget()
@@ -111,4 +128,24 @@ void App::draw(Drawable * drawable)
         m_camera->draw(dynamic_cast<Sprite*> (drawable));
     else
         drawable->draw(m_renderer);
+}
+
+void App::keyPressed(SDL_Scancode key)
+{
+    // overload
+}
+
+void App::keyReleased(SDL_Scancode key)
+{
+    // overload
+}
+
+void App::buttonReleased(Uint8 button)
+{
+    // overload
+}
+
+void App::buttonPressed(Uint8 button)
+{
+    // overload
 }
