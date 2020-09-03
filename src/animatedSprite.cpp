@@ -1,5 +1,5 @@
-#include "animatedSprite.h"
-#include "texture.h"
+#include "header/animatedSprite.h"
+#include "header/texture.h"
 
 AnimatedSprite::AnimatedSprite(int x, int y, int frames_per_second, Mode mode) :
 	Sprite(x, y), m_timer(1000/frames_per_second),

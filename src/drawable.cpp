@@ -1,5 +1,5 @@
-#include "drawable.h"
-#include "app.h"
+#include "header/drawable.h"
+#include "header/app.h"
 #include <SDL2/SDL_image.h>
 
 Drawable::~Drawable()

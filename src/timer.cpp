@@ -1,4 +1,4 @@
-#include "timer.h"
+#include "header/timer.h"
 #include <SDL2/SDL.h>
 
 Uint32 getTicks()

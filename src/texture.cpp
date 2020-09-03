@@ -1,5 +1,5 @@
-#include "texture.h"
-#include "app.h"
+#include "header/texture.h"
+#include "header/app.h"
 #include <sstream>
 #include <SDL2/SDL_image.h>
 

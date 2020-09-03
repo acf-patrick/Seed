@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-#include "app.h"
+#include "header/app.h"
 
 App* App::instance(NULL);
 

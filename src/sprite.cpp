@@ -1,5 +1,5 @@
-#include "sprite.h"
-#include "texture.h"
+#include "header/sprite.h"
+#include "header/texture.h"
 
 Sprite::Sprite(int x, int y, std::string file_img) :
 	m_flip(SDL_FLIP_NONE), m_scaleX(1),

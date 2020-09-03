@@ -1,5 +1,5 @@
-#include "camera.h"
-#include "app.h"
+#include "header/camera.h"
+#include "header/app.h"
 
 Camera* Camera::instance(nullptr);
 
