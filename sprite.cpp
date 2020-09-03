@@ -8,7 +8,6 @@ Sprite::Sprite(int x, int y, std::string file_img) :
     setPosition(x, y);
     if (!file_img.empty())
 		setTexture(TextureManager::load(file_img));
-	defineSourceRect(0, 0, m_w, m_h);
 }
 
 void Sprite::defineSourceRect(int x, int y, int w, int h)
