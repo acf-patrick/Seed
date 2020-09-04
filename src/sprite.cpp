@@ -26,11 +26,14 @@ void Sprite::defineSourceRect(const SDL_Rect & rect)
     m_source_rect.h = rect.h;
 }
 
-void Sprite::draw(SDL_Renderer* renderer)
+void Sprite::draw(SDL_Renderer * renderer, Camera * camera)
 {
+	SDL_Rect crect = { 0 };
+	if (camera)
+		crect = camera->getBox();
 	SDL_Rect source(m_source_rect), dest;
-	dest.x = (Sint16)m_x;
-	dest.y = (Sint16)m_y;
+	dest.x = (Sint16)(m_x - crect.x);
+	dest.y = (Sint16)(m_y - crect.y);
 	dest.w = m_w;
 	dest.h = m_h;
 	SDL_RenderCopyEx(renderer, m_texture, &source, &dest, m_angle, NULL, m_flip);

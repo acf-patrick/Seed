@@ -3,9 +3,6 @@
 
 #include <SDL2/SDL.h>
 #include "object.h"
-#include "sprite.h"
-
-class Sprite;
 
 class Camera : public Object
 {
@@ -19,7 +16,7 @@ public:
 	void setMode(Mode);
 
 	void update();
-	void draw(Sprite*);
+	// void draw(Drawable*);
 
 	static Camera* instance;
 
@@ -28,6 +25,7 @@ private:
 	SDL_Rect *m_container, *m_limit;
 	Mode m_mode;
 	SDL_Rect m_rect;
+	
 };
 
 #endif // CAMERA_H

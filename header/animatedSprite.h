@@ -5,6 +5,7 @@
 #include <vector>
 #include "timer.h"
 #include "sprite.h"
+#include "camera.h"
 #include "drawable.h"
 
 class AnimatedSprite : public Sprite
@@ -27,7 +28,7 @@ public:
 
 	void update();
 
-	void draw(SDL_Renderer*);
+	void draw(SDL_Renderer*, Camera*);
 
 protected:
     Chrono m_timer;

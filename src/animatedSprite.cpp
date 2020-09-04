@@ -60,7 +60,7 @@ void AnimatedSprite::setTexture(const std::string & file_name)
 		Sprite::setTexture(file_name);
 }
 
-void AnimatedSprite::draw(SDL_Renderer* renderer)
+void AnimatedSprite::draw(SDL_Renderer * renderer, Camera * camera)
 {
 	SDL_Point centered;
     if (m_mode == using_spritesheet)
@@ -75,7 +75,7 @@ void AnimatedSprite::draw(SDL_Renderer* renderer)
         centered.y = 0.5*(m_h - t_size.y);
 	}
     move (centered.x, centered.y);
-	Sprite::draw(renderer);
+	Sprite::draw(renderer, camera);
     move (-centered.x, -centered.y);
 }
 

@@ -10,6 +10,8 @@ public:
 	TextureManager();
     ~TextureManager();
     static SDL_Texture* load(const std::string &, std::string ID = "");
+	static void destroy(const std::string&);
+	static void destroy(SDL_Texture*);
     static SDL_Texture* get(const std::string &);
 
 private:

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include "object.h"
+#include "camera.h"
 #include "drawable.h"
 
 /* note : m_rect contains the texture's size not object's size */
@@ -22,7 +23,7 @@ public:
 	virtual void setTexture(SDL_Texture*);
 	virtual void setTexture(const std::string&);
 
-    void draw(SDL_Renderer*);
+    void draw(SDL_Renderer*, Camera*);
 
     SDL_Point getTextureSize();
 

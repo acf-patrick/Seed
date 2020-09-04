@@ -133,12 +133,7 @@ void App::cleanTarget()
 }
 
 void App::draw(Drawable * drawable)
-{
-    if (m_camera)
-        m_camera->draw(dynamic_cast<Sprite*> (drawable));
-    else
-        drawable->draw(m_renderer);
-}
+{ drawable->draw(m_renderer, m_camera); }
 
 void App::keyPressed(SDL_Scancode key)
 {

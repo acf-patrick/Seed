@@ -39,6 +39,7 @@ void Camera::setLimit(int x, int y, int w, int h)
 
 void Camera::update()
 {
+	/* in case camera has moved */
 	m_rect.x = (Sint16)m_x;
 	m_rect.y = (Sint16)m_y;
 	if (!m_focus)
@@ -73,9 +74,11 @@ void Camera::update()
         if (m_rect.y+m_rect.h >= m_limit->y+m_limit->h)
 			m_rect.y = Sint16(m_limit->y+m_limit->h - m_rect.h);
 	}
+	/* update current object position */
+	setPosition(m_rect.x, m_rect.y);
 }
-
-void Camera::draw(Sprite* sprite)
+/*
+void Camera::draw(Drawable * object)
 {
 	if (!sprite)
 		return;
@@ -83,7 +86,7 @@ void Camera::draw(Sprite* sprite)
     sprite->setPosition(prev.x - m_rect.x, prev.y - m_rect.y);
     sprite->draw(App::instance->getRenderer());
     sprite->setPosition(prev.x, prev.y);
-}
+}*/
 
 void Camera::setMode(Mode mode)
 { m_mode = mode; }
