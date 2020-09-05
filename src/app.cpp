@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <utility>
 #include "header/app.h"
 
 App* App::instance(NULL);
@@ -153,4 +154,10 @@ void App::buttonReleased(Uint8 button)
 void App::buttonPressed(Uint8 button)
 {
     // overload
+}
+
+std::pair<SDL_Renderer*, Camera*> App::getRenderingComponent()
+{ 
+	App & self = *instance;
+	return std::pair<SDL_Renderer*, Camera*> (self.m_renderer, self.m_camera);
 }

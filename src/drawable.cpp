@@ -6,5 +6,5 @@ Drawable::~Drawable()
 
 void Drawable::draw(SDL_Renderer* renderer, Camera * camera)
 {
-	// overload
+    // overload
 }

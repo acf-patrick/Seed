@@ -12,16 +12,16 @@
 class Sprite : public Object, public Drawable
 {
 public:
-	Sprite(int x = 0, int y = 0, std::string file_img = "");
+    Sprite(int x = 0, int y = 0, std::string file_img = "");
 
-	/* which part of the texture will be shown */
-	void defineSourceRect(int, int, int, int);
-	void defineSourceRect(const SDL_Rect&);
+    /* which part of the texture will be shown */
+    void defineSourceRect(int, int, int, int);
+    void defineSourceRect(const SDL_Rect&);
 
-	void flip(SDL_RendererFlip);
+    void flip(SDL_RendererFlip);
 
-	virtual void setTexture(SDL_Texture*);
-	virtual void setTexture(const std::string&);
+    virtual void setTexture(SDL_Texture*);
+    virtual void setTexture(const std::string&);
 
     void draw(SDL_Renderer*, Camera*);
 
@@ -32,8 +32,8 @@ public:
     void setScaleY(float);
 
 protected:
-	// tells which part of the texture will be drawn
-	// set to texture's size by default
+    // tells which part of the texture will be drawn
+    // set to texture's size by default
     SDL_Rect m_source_rect;
 
     SDL_RendererFlip m_flip;

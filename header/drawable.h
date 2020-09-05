@@ -9,8 +9,8 @@
 class Drawable
 {
 public:
-	virtual ~Drawable();
-	virtual void draw(SDL_Renderer*, Camera*);
+    virtual ~Drawable();
+    virtual void draw(SDL_Renderer*, Camera*);
 
 protected:
     SDL_Texture * m_texture;

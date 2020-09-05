@@ -7,17 +7,17 @@
 class TextureManager
 {
 public:
-	TextureManager();
+    TextureManager();
     ~TextureManager();
     static SDL_Texture* load(const std::string &, std::string ID = "");
-	static void destroy(const std::string&);
-	static void destroy(SDL_Texture*);
+    static void destroy(const std::string&);
+    static void destroy(SDL_Texture*);
     static SDL_Texture* get(const std::string &);
 
 private:
-	std::map<std::string, SDL_Texture*> m_textures;
+    std::map<std::string, SDL_Texture*> m_textures;
 
-	static TextureManager* instance;
+    static TextureManager* instance;
 };
 
 #endif // TEXTURE_H

@@ -9,12 +9,24 @@ Uint32 getTicks()
     return ret;
 }
 
-Timer::Timer() { restart(); }
+Timer::Timer()
+{
+    restart();
+}
 
-int Timer::getElapsedMilliseconds(){ return (SDL_GetTicks() - start_time + 1); }
-float Timer::getElapsedSeconds(){ return getElapsedMilliseconds()/1000.; }
+int Timer::getElapsedMilliseconds()
+{
+    return (SDL_GetTicks() - start_time + 1);
+}
+float Timer::getElapsedSeconds()
+{
+    return getElapsedMilliseconds()/1000.;
+}
 
-void Timer::restart() { start_time = SDL_GetTicks(); }
+void Timer::restart()
+{
+    start_time = SDL_GetTicks();
+}
 
 Chrono::Chrono(int remaining_time):
     remaining(remaining_time)
@@ -25,4 +37,7 @@ void Chrono::restart(int r_time)
         remaining = r_time;
     Timer::restart();
 }
-bool Chrono::out() { return (getElapsedMilliseconds() >= remaining); }
+bool Chrono::out()
+{
+    return (getElapsedMilliseconds() >= remaining);
+}

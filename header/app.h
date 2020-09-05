@@ -33,6 +33,7 @@ public:
     static bool getButtonPressed(int);
     static void getMousePosition(int*, int*);
     static void getWindowSize(int*, int*);
+	static std::pair<SDL_Renderer*, Camera*> getRenderingComponent();
 
 protected:
     virtual void manage_events();

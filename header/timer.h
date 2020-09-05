@@ -16,7 +16,7 @@ protected:
 class Chrono: public Timer
 {
 public:
-	// wait time in milliseconds
+    // wait time in milliseconds
     Chrono(int);
     void restart(int r_time = -1);
     bool out();
